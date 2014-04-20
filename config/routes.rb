@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  get 'landing_pages/home'
+
   devise_for :users, :controllers => { :registrations => "registrations" }
 
   devise_scope :user do
-    root 'devise/registrations#new'
+    root 'landing_pages#home'
   end
 
   resources :free_times
