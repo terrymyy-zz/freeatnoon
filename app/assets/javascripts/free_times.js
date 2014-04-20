@@ -19,7 +19,6 @@ $(document).ready(function() {
 
   $("#timeslot-submit-button").click(function(e) {
 	e.preventDefault();
-	console.log("oiwjefo");
 	var slots = {};
 	var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 	for (var i=0; i<days.length; i++) {
