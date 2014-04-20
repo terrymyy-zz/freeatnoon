@@ -1,0 +1,36 @@
+<div class="time-axis">
+  <% (10..15).each do |i| %>
+    <div class="time-label">
+      <% if i < 12 %>
+        <%= i %>
+      <% elsif i == 12 %>
+        Noon
+      <% else %>
+        <%= i-12 %>
+      <% end %>
+      <%= " AM" if i < 12 %>
+      <%= " PM" if i > 12 %>
+    </div>
+  <% end %>
+</div>
+
+<div class ="week">
+  <div class="day-axis">
+    <% days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] %>
+    <% days.each_with_index do |day, i| %>
+      <div id="day<%=i%>" class="day"> <%= day %> </div>
+    <% end %>
+  </div>
+  <% (0..23).each do |i| %>
+    <div id="row<%=i%>" class="time">
+      <% (0..6).each do |j| %>
+        <% klass = days[j] + " slot" %>
+	<% klass += " right" if j == 6 %>
+	<% klass += " top" if i % 4 == 0 %>
+	<% klass += " top dotted" if i % 4 == 2 %>
+	<% klass += " bottom" if i == 23 %>
+	<div id="<%=days[j]%>-<%=(10+0.25*i)%>" class="<%=klass%>"></div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

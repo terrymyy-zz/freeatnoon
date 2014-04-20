@@ -1,0 +1,139 @@
+$cell-width: 50px;
+$cell-height: 13px;
+$select-color: #1abc9c;
+$deselect-color: #ccc;
+
+@mixin form-button {
+  margin-top: 30px;
+  width: 40%;
+  font-size: 20px;
+  height : 40px;
+  box-sizing: border-box;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+#signup-form, #login-form {
+  width: 80%;
+  margin: 30px auto;
+
+  label, input {
+    display: inline-block;
+    margin: 10px 0;
+  }
+
+  label {
+    font-size: 23px;
+    width: 35%;
+    text-align: right;
+  }
+
+  label+input {
+    width: 35%;
+    font-size: 13px;
+    height: 25px;
+    margin: 0 20% 0 4%;
+  }
+
+  #signup-button {
+    @include form-button;
+    background: #4d90fe;
+  }
+
+  #login-button {
+    @include form-button;
+    background: #23cf6b;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+#timeslot-submit-button {
+  @include form-button;
+  background: #4d90fe;
+  display: block;
+  margin: 40px auto;
+}
+
+.day {
+  display: inline-block;
+  width: $cell-width+1;
+  height: $cell-height*2+3;
+}
+
+.time-axis {
+  display: inline-block;
+  margin-top: $cell-height*2+3;
+  height: $cell-height*24+13;
+}
+
+.time-label {
+  height: $cell-height*4+2;
+  text-align: right;
+  font-size: 18px;
+}
+
+.week {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.time {
+  font-size: 0px;
+  .top {
+    border-top-width: 1px;
+    border-top-style: solid;
+  }
+
+  .bottom {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+
+  .right {
+    border-right-width: 1px;
+    border-right-style: solid;
+  }
+
+  .dotted {
+    border-top-style: dotted;
+  }
+
+ .selected {
+    background: $select-color;
+  }
+}
+
+.slot {
+  width: $cell-width;
+  height: $cell-height;
+  background: $deselect-color;
+  display: inline-block;
+  vertical-align: top;
+  border-left-width: 1px;
+  border-left-style: solid;
+}
+
+
+body {
+  background: #e7e7e7;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 740px;
+  background: #fff;
+  text-align: center;
+  border-right: solid 2px $deselect-color;
+  border-bottom: solid 2px $deselect-color;
+  padding: 10px 30px 60px 30px;
+}
