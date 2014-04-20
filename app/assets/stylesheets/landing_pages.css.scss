@@ -1,3 +1,16 @@
 // Place all the styles related to the landing_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+#home_img {
+	background-image:url('https://dl.dropboxusercontent.com/u/45843110/FreeAtNoon/Screenshot%202014-04-19%2023.30.03.png');
+	height: 1290px;
+	width: 1440px;
+	margin: -20 -10 0 0;
+	position: absolute;
+}
