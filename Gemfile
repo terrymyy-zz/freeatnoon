@@ -14,6 +14,7 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'underscore-rails'
+gem 'rails_12factor', group: :production
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
