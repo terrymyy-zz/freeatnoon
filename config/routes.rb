@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'landing_pages/home'
+  get 'bye' => 'landing_pages#bye'
 
   devise_for :users, :controllers => { :registrations => "registrations" }
 

@@ -3,13 +3,13 @@ class FreeTimesController < ApplicationController
   end
 
   def create
-    FreeTime.create(free_time_params)
-    render text: params.inspect and return
+    current_user.free_times.create(free_times_params)
+    render :js => "window.location = '/bye'"
   end
 
   private
 
-  def free_time_params
-    params.require(:free_time).permit(:day, :time, :duration)
+  def free_times_params
+    params.require(:free_times).map { |ft| ft.permit(:day, :time, :duration) }
   end
 end

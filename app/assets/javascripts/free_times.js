@@ -35,6 +35,7 @@ $(document).ready(function() {
 	    _.map(slots, function(arr) {arr.sort(function(a,b) { return a-b; })});
 	}
 
+	var data = []
 	for (var i=0; i<slots.length; i++) {
 	    if (!slots[i]) continue;
 	    var selected = slots[i];
@@ -44,29 +45,28 @@ $(document).ready(function() {
 		if (selected[j]-selected[j-1] === 0.25)
 		    end = selected[j];
 		else {
-		    post_free_time(i, start, end-start+0.25);
+		    post_free_time(data, i, start, end-start+0.25);
 		    start = selected[j];
 		    end = selected[j];
 		}
 	    }
-	    post_free_time(i, start, end-start+0.25);
+	    post_free_time(data, i, start, end-start+0.25);
 	}
+
+	$.ajax({
+	    type: "POST",
+	    url: "/free_times/",
+	    data: JSON.stringify({free_times: data}),
+	    dataType: "script",
+	    contentType: "application/json",
+	    error: function (data) {
+		alert("Failed creating user free times.");
+	    }
+	});
     });
 });
 
-function post_free_time(day, time, duration) {
+function post_free_time(data, day, time, duration) {
     console.log("time: "+ time+ ", day: "+day+", length: "+duration);
-    $.ajax({
-	type: "POST",
-	url: "/free_times/",
-	data: { free_time: { day: time, day: time, duration: duration } },
-	dataType: "json",
-	success: function (data) {
-	    alert(data);
-	    return false;
-	},
-	error: function (data) {
-	    return false;
-	}
-    });
+    data.push({ day: day, time: time, duration: duration });
 }
