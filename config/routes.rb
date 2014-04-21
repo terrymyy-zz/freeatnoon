@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     root "landing_pages#home"
+    get "sign_up", to: "devise/registrations#new"
     get "sign_in", to: "devise/sessions#new"
     get "sign_out", to: "devise/sessions#destroy"
   end
