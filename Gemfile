@@ -12,10 +12,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'spring',        group: :development
 
+gem 'dotenv-rails', :groups => [:development, :test]
 gem 'devise'
 gem 'underscore-rails'
 gem 'rails_12factor', group: :production
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'twilio-ruby', '~> 3.11'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby

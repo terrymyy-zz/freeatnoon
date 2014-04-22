@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :free_times
 
+  resources :smses
+
   # Example of regular route:
   #   get "products/:id" => "catalog#view"
 

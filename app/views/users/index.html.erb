@@ -7,14 +7,21 @@
           <tr>
             <th>Email</th>
             <th>Phone Number</th>
-            <th>Signup Date</th>
+            <th>SMS Message</th>
           </tr>
 	</thead>
 	<tbody>
           <% @users.each do |user| %>
           <tr>
             <td><%= user.email %></td>
-            <td><%= user.created_at.localtime.strftime("%b %-d, %Y") %></td>
+            <td><%= user.phone_number %></td>
+	    <td>
+	      <%= form_for :sms, url: smses_path do |f| %>
+	        <%= f.hidden_field :to, value: user.phone_number %>
+	        <%= f.text_field :body %>
+		<%= f.submit "Send" %>
+	      <% end %>
+	    </td>
           </tr>
           <% end %>
 	</tbody>
