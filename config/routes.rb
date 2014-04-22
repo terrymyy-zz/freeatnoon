@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get "sign_in", to: "devise/sessions#new"
     get "sign_out", to: "devise/sessions#destroy"
   end
+  resources :users
 
   resources :free_times
 
