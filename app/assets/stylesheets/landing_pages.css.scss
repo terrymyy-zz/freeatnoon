@@ -8,8 +8,18 @@ body {
 }
 
 #home_img {
-	background-image:url('https://dl.dropboxusercontent.com/u/45843110/FreeAtNoon/obama-medvedyev-cropped.png');
+	background-image: asset-url("obama-medvedyev-cropped.png", image);
+	background-size: cover;
 	width: 100%;
 	height: 100%;
 	position: absolute;
+}
+
+#bigBox{
+	margin-top: 30%;
+	background-color: rgba(66, 129, 203, 0.8);
+}
+
+#bigBoxContent{
+	color: #ffffff;
 }
