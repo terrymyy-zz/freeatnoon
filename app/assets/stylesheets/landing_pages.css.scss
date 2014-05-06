@@ -15,11 +15,15 @@ body {
 	position: absolute;
 }
 
-#bigBox{
+#bigBox {
 	margin-top: 30%;
 	background-color: rgba(66, 129, 203, 0.8);
 }
 
-#bigBoxContent{
+#bigBoxContent {
 	color: #ffffff;
+}
+
+#user-info-form {
+    display: none;
 }
