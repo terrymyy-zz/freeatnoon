@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@font-face {
+	font-family: "Journal";
+ src: url("journal.ttf") format("truetype");
+}
+
+
 body {
 	margin: 0px;
 	padding: 0px;
@@ -24,6 +30,28 @@ body {
 	color: #ffffff;
 }
 
+#welcome-message {
+	margin: auto auto auto auto;
+	text-align: center;
+	margin-top: 20px;
+}
+
 #user-info-form {
     display: none;
+}
+
+#welcome-message > h1 {
+	font-family: "Journal";
+	font-size: 64pt;
+	line-height: 15pt;
+	padding-bottom: 30px;
+}
+
+#welcome-message > h3 {
+	font-size: 14pt;
+	font-weight: 800;
+}
+
+#welcome-message > p {
+	text-align: left;
 }
