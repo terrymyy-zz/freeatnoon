@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => "registrations" }
 
   devise_scope :user do
-    root "landing_pages#home"
+    root "devise/registrations#new"
     get "sign_up", to: "devise/registrations#new"
     get "sign_in", to: "devise/sessions#new"
     get "sign_out", to: "devise/sessions#destroy"
