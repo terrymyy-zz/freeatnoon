@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => "registrations" }
 
   devise_scope :user do
-    root "devise/registrations#new"
+    root "landing_pages/home"
     get "sign_up", to: "devise/registrations#new"
     get "sign_in", to: "devise/sessions#new"
     get "sign_out", to: "devise/sessions#destroy"
   end
-  resources :users
+  resources :users, only: :index
 
   resources :free_times
 
