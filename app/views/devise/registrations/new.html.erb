@@ -8,7 +8,7 @@
       	  <h1>Free at Noon</h1>
       	  <p>We’re a group of people at Penn who want to take advantage of our random windows of free of time — to meet new people and to keep up with friends.</p>
       	  <p>It’s a pain to schedule that stuff though. This tool takes the hassle out of seeing if anyone is free when you are. Join us!</p>
-      	  <%= link_to "Join the group", "#", id: "join-group-button", class: "btn btn-default" %>
+      	  <%= link_to "Join the Group", "#", id: "join-group-button", class: "btn" %>
         </div>
 
 
@@ -33,7 +33,7 @@
           <div><%= f.label :password %><br />
             <%= f.password_field :password, autocomplete: "off" %></div>
 
-          <div><%= f.submit "Continue", class: "btn", id: "continue-button" %></div>
+          <div><%= f.submit "Continue", class: "btn btn-default", id: "continue-button" %></div>
           <% end %>
 
           <%= render "devise/shared/links" %>
