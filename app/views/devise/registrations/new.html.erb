@@ -9,6 +9,7 @@
 	  <p>It’s a pain to schedule that stuff though. This tool takes the hassle out of seeing if anyone is free when you are. Join us!</p>
 	  <%= link_to "Join the group", "#", id: "join-group-button", class: "btn btn-default" %>
         </div>
+
         <div id="user-info-form">
           <h2>Sign up</h2>
 
@@ -30,12 +31,26 @@
           <div><%= f.label :password %><br />
             <%= f.password_field :password, autocomplete: "off" %></div>
 
-
-          <div><%= f.submit "Sign up" %></div>
+          <div><%= f.submit "Continue", class: "btn", id: "continue-button" %></div>
           <% end %>
 
           <%= render "devise/shared/links" %>
         </div>
+
+        <div id="time-info-form">
+          <h2> When are you NOT available? </h2>
+          <input type="checkbox" value="2014-05-06"> Wednesday (5/6) <br />
+          <input type="checkbox" value="2014-05-07"> Thursday (5/7) <br />
+          <input type="checkbox" value="2014-05-08"> Friday (5/8) <br />
+          <input type="checkbox" value="2014-05-09"> Saturday (5/9) <br />
+          <input type="checkbox" value="2014-05-10"> Sunday (5/10) <br />
+          <input type="checkbox" value="2014-05-11"> Monday (5/11) <br />
+          <input type="checkbox" value="2014-05-12"> Tuesday (5/12) <br />
+          <h2> When are you leaving campus? </h2>
+          <input type="date" id="leaving-date"> <br />
+	  <%= link_to "Submit", "#", id: "submit-button", class: "btn btn-default" %>
+        </div>
+
       </div>
     </div>
   </div>
