@@ -4,7 +4,7 @@
 
 @font-face {
 	font-family: "Journal";
- src: url("journal.ttf") format("truetype");
+ src: asset-url("journal.ttf", font) format("truetype");
 }
 
 
