@@ -36,27 +36,6 @@ body {
 	margin-top: 20px;
 }
 
-#user-info-form {
-    display: none;
-}
-
-#user-info-form > h2 {
-	text-align: center;
-}
-
-label {
-	font-family: "Roboto" !important;
-	font-weight: 100 !important;
-	font-size: 13pt !important;
-	margin-top: 15px;
-	line-height: 0pt;
-}
-
-input {
-	border-radius: 3px;
-	border: 1px inset rgba(0, 0, 0, 0.35);
-}
-
 
 #welcome-message > h1 {
 	font-family: "Journal";
@@ -92,18 +71,6 @@ input {
 	color: #fff;
 }
 
-#user-info-form > input > .btn {
-	margin-top: 15px;
-	margin-bottom: 25px;
-	font-family: "Roboto";
-	font-weight: 100;
-	font-size: 20pt;
-	padding-left: 70px;
-	padding-right: 70px;
-	background-color: #36CBA2;
-	color: #fff;
-	}
-
 #welcome-message > .btn:hover {
 	background-color: #43DBB1;
 }
@@ -111,6 +78,58 @@ input {
 #welcome-message > .btn:active {
 	background-color: #2DB28E;
 }
+
+#user-info-form {
+ display: none;
+
+ #new_user {
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	width: 250px;
+ 	input {
+ 		height: 30px;
+ 		width: 200px;
+			margin-left: 25px;
+			padding-left: 10px;
+		}
+		label {
+			margin-left: 25px !important;
+		}
+ }
+}
+
+#user-info-form > h2 {
+	text-align: center;
+}
+
+label {
+	font-family: "Roboto" !important;
+	font-weight: 100 !important;
+	font-size: 13pt !important;
+	margin-top: 15px;
+	line-height: 0pt;
+}
+
+input {
+	border-radius: 3px;
+	border: 1px inset rgba(0, 0, 0, 0.35);
+	color: #36CBA2 !important;
+
+}
+input[type="submit"]{
+		margin-top: 20px;
+		font-family: "Roboto";
+		font-weight: 100;
+		font-size: 20pt;
+		padding-left: 70px !important;
+		padding-right: 70px;
+		background-color: #36CBA2 !important;
+		color: #fff !important;
+		border: 0px;
+		margin-left: 0 !important;
+		height: 43px !important;
+		width: 250px !important;
+	}
 
 
 #time-info-form {
