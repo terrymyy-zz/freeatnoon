@@ -45,12 +45,12 @@ $(document).ready(function() {
 		if (selected[j]-selected[j-1] === 0.25)
 		    end = selected[j];
 		else {
-		    postFreeTime(data, i, start, end-start+0.25);
+		    pushFreeTime(data, i, start, end-start+0.25);
 		    start = selected[j];
 		    end = selected[j];
 		}
 	    }
-	    postFreeTime(data, i, start, end-start+0.25);
+	    pushFreeTime(data, i, start, end-start+0.25);
 	}
 
 	$.ajax({
@@ -66,7 +66,7 @@ $(document).ready(function() {
     });
 });
 
-function postFreeTime(data, day, time, duration) {
+function pushFreeTime(data, day, time, duration) {
     console.log("time: "+ time+ ", day: "+day+", length: "+duration);
     data.push({ day: day, time: time, duration: duration });
 }

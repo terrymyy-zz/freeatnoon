@@ -1,5 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
   before_filter :configure_permitted_parameters, :only => [:create]
+  respond_to :json
+
+  def create
+    params[:user][:password_confirmation] = params[:user][:password]
+    super
+  end
 
   protected
 
