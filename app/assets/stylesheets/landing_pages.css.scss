@@ -22,7 +22,7 @@ body {
 }
 
 #bigBox {
-	margin-top: 30%;
+	margin-top: 20%;
 	background-color: rgba(66, 129, 203, 0.85);
 }
 
@@ -39,6 +39,19 @@ body {
 #user-info-form {
     display: none;
 }
+
+#user-info-form > h2 {
+	text-align: center;
+}
+
+label {
+	font-family: "Roboto" !important;
+	font-weight: 100 !important;
+	font-size: 13pt !important;
+	margin-top: 15px;
+	line-height: 0pt;
+}
+
 
 #welcome-message > h1 {
 	font-family: "Journal";
@@ -73,6 +86,18 @@ body {
 	background-color: #36CBA2;
 	color: #fff;
 }
+
+#user-info-form > #continue-button > .btn {
+	margin-top: 15px;
+	margin-bottom: 25px;
+	font-family: "Roboto";
+	font-weight: 100;
+	font-size: 20pt;
+	padding-left: 70px;
+	padding-right: 70px;
+	background-color: #36CBA2;
+	color: #fff;
+	}
 
 #welcome-message > .btn:hover {
 	background-color: #43DBB1;
