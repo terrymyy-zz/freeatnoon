@@ -52,6 +52,11 @@ label {
 	line-height: 0pt;
 }
 
+input {
+	border-radius: 3px;
+	border: 1px inset rgba(0, 0, 0, 0.35);
+}
+
 
 #welcome-message > h1 {
 	font-family: "Journal";
@@ -87,7 +92,7 @@ label {
 	color: #fff;
 }
 
-#user-info-form > #continue-button > .btn {
+#user-info-form > input > .btn {
 	margin-top: 15px;
 	margin-bottom: 25px;
 	font-family: "Roboto";
