@@ -79,6 +79,10 @@ body {
 	background-color: #2DB28E;
 }
 
+#user-info-form > h2 {
+	text-align: center;
+}
+
 #user-info-form {
  display: none;
 
@@ -98,9 +102,6 @@ body {
  }
 }
 
-#user-info-form > h2 {
-	text-align: center;
-}
 
 label {
 	font-family: "Roboto" !important;
@@ -118,6 +119,7 @@ input {
 }
 input[type="submit"]{
 		margin-top: 20px;
+		margin-bottom: 20px;
 		font-family: "Roboto";
 		font-weight: 100;
 		font-size: 20pt;
