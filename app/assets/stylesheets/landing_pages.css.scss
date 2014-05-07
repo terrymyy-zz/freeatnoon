@@ -7,6 +7,13 @@
  src: asset-url("journal.ttf", font) format("truetype");
 }
 
+h3 {
+	font-family: "Helvetica", "Verdana", sans-serif;
+}
+
+h2 {
+	font-family: "Helvetica", "Verdana", sans-serif;
+}
 
 body {
 	margin: 0px;
@@ -34,8 +41,6 @@ body {
 	margin: auto auto auto auto;
 	text-align: center;
 	margin-top: 20px;
-	display: none;
-
 }
 
 
@@ -206,6 +211,7 @@ input[type="submit"]:active{
 }
 
 #thankyou-message {
+		display: none;
 
 	h2 {
 		text-align: center;
