@@ -13,28 +13,28 @@
         </div>
 
 
-        <div id="user-info-form">
+        <div id="user-info-form" class>
           <h2>Woohoo! Welcome.</h2>
 
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
 
           <div><%= f.label :first_name, id: "user-info-form-label" %><br />
-            <%= f.text_field :first_name, autofocus: true, placeholder: " Jon" %></div>
+            <%= f.text_field :first_name, autofocus: true, type: "text", placeholder: "Jon" %></div>
 
           <div><%= f.label :last_name, id: "user-info-form-label" %><br />
-            <%= f.text_field :last_name, placeholder: " Huntsman" %></div>
+            <%= f.text_field :last_name, type: "text", placeholder: "Huntsman" %></div>
 
           <div><%= f.label :phone_number, id: "user-info-form-label" %><br />
-            <%= f.text_field :phone_number, placeholder: " 650-291-3866" %></div>
+            <%= f.text_field :phone_number, type: "tel", placeholder: "650-291-3866" %></div>
 
           <div><%= f.label :email, id: "user-info-form-label" %><br />
-            <%= f.email_field :email, placeholder: " jon.huntsman97@aol.net" %></div>
+            <%= f.email_field :email, type: "email", placeholder: "jon.huntsman97@aol.net" %></div>
 
           <div><%= f.label :password, id: "user-info-form-label" %><br />
-            <%= f.password_field :password, autocomplete: "off", placeholder: " *********" %></div>
+            <%= f.password_field :password, type: "password", autocomplete: "off", placeholder: "*********" %></div>
 
-          <div><%= f.submit "Continue", class: "btn", id: "continue-button" %></div>
+          <div><%= f.submit "Continue", id: "continue-button" %></div>
           <% end %>
 
           <%= render "devise/shared/links" %>
