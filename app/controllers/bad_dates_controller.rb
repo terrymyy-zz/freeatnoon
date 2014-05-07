@@ -4,7 +4,9 @@ class BadDatesController < ApplicationController
       current_user.leaving_date = params[:leaving_date]
       current_user.save
     end
-    current_user.bad_dates.create(bad_dates_params)
+    if params[:bad_dates]
+      current_user.bad_dates.create(bad_dates_params)
+    end
     render json: { result: "success" }
   end
 
