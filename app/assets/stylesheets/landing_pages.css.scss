@@ -34,6 +34,8 @@ body {
 	margin: auto auto auto auto;
 	text-align: center;
 	margin-top: 20px;
+	display: none;
+
 }
 
 
@@ -204,7 +206,26 @@ input[type="submit"]:active{
 }
 
 #thankyou-message {
-    display: none;
+
+	h2 {
+		text-align: center;
+		margin-top: 35px;
+		margin-bottom: 15px;
+	}
+
+	p {
+	text-align: left;
+	margin-left: 6%;
+	margin-right: 6%;
+ font-family: "Roboto";
+	font-weight: 100;
+	font-size: 13pt;
+	line-height: 16pt;
+	}
+
+	a {
+		color: #000;
+	}
 }
 
 footer {
