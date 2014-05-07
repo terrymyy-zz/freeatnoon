@@ -4,7 +4,7 @@ class FreeTimesController < ApplicationController
 
   def create
     current_user.free_times.create(free_times_params)
-    render :js => "window.location = '/bye'"
+    render js: "window.location = '/bye'"
   end
 
   private

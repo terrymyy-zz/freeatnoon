@@ -10,10 +10,10 @@ Rails.application.routes.draw do
     get "sign_in", to: "devise/sessions#new"
     get "sign_out", to: "devise/sessions#destroy"
   end
+
   resources :users, only: :index
-
   resources :free_times
-
+  resources :bad_dates
   resources :smses
 
   # Example of regular route:

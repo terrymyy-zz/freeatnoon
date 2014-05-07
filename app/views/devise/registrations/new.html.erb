@@ -12,12 +12,11 @@
       	  <%= link_to "Join the Group", "#", id: "join-group-button", class: "btn" %>
         </div>
 
-
-        <div id="user-info-form" class>
-          <h2>Woohoo! Welcome.</h2>
-
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name),
+                     html: {id: "user-info-form"}) do |f| %>
           <%= devise_error_messages! %>
+
+          <h2>Woohoo! Welcome.</h2>
 
           <div><%= f.label :first_name, id: "user-info-form-label" %><br />
             <%= f.text_field :first_name, autofocus: true, type: "text", placeholder: "Jon" %></div>
@@ -35,12 +34,9 @@
             <%= f.password_field :password, type: "password", autocomplete: "off", placeholder: "*********" %></div>
 
           <div><%= f.submit "Continue", id: "continue-button" %></div>
-          <% end %>
+        <% end %>
 
-          <%= render "devise/shared/links" %>
-        </div>
-
-        <div id="time-info-form">
+        <form id="time-info-form">
           <h2> When are you NOT available? </h2>
           <input type="checkbox" value="2014-05-06"> Wednesday (5/6) <br />
           <input type="checkbox" value="2014-05-07"> Thursday (5/7) <br />
@@ -51,11 +47,12 @@
           <input type="checkbox" value="2014-05-12"> Tuesday (5/12) <br />
           <h2> When are you leaving campus? </h2>
           <input type="date" id="leaving-date"> <br />
-	     <%= link_to "Submit", "#", id: "submit-button", class: "btn btn-default" %>
+	  <%= link_to "Submit", "#", id: "submit-button", class: "btn btn-default" %>
+        </form>
+
+        <div id="thankyou-message">
+          THANKS FOR SIGNING UP.
         </div>
-
-
-
       </div>
     </div>
     </div>
