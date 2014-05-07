@@ -14,7 +14,7 @@
 
         <div id="user-info-form">
           <h2>Woohoo! Welcome.</h2>
-          
+
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
 
@@ -38,17 +38,21 @@
         </div>
 
         <form id="time-info-form">
-          <h2> When are you NOT available? </h2>
-          <input type="checkbox" value="2014-05-06"> Wednesday (5/6) <br />
-          <input type="checkbox" value="2014-05-07"> Thursday (5/7) <br />
-          <input type="checkbox" value="2014-05-08"> Friday (5/8) <br />
-          <input type="checkbox" value="2014-05-09"> Saturday (5/9) <br />
-          <input type="checkbox" value="2014-05-10"> Sunday (5/10) <br />
-          <input type="checkbox" value="2014-05-11"> Monday (5/11) <br />
-          <input type="checkbox" value="2014-05-12"> Tuesday (5/12) <br />
-          <h2> When are you leaving campus? </h2>
-          <input type="date" id="leaving-date"> <br />
-	  <%= link_to "Submit", "#", id: "submit-button", class: "btn btn-default" %>
+          <h2> When are you <span style="color:#000">not</span> available? </h2>
+          <div id="time-info-form-answers-top">
+            <input type="checkbox" value="2014-05-06"> Wednesday (5/6) <br />
+            <input type="checkbox" value="2014-05-07"> Thursday (5/7) <br />
+            <input type="checkbox" value="2014-05-08"> Friday (5/8) <br />
+            <input type="checkbox" value="2014-05-09"> Saturday (5/9) <br />
+            <input type="checkbox" value="2014-05-10"> Sunday (5/10) <br />
+            <input type="checkbox" value="2014-05-11"> Monday (5/11) <br />
+            <input type="checkbox" value="2014-05-12"> Tuesday (5/12) <br />
+          </div>
+            <h2> When do you leave campus? </h2>
+          <div id="time-info-form-answers-bottom">
+            <input type="date" id="leaving-date" value="2014=05-18"> <br />
+          </div>
+	  <%= link_to "Submit", "#", id: "submit-button", class: "btn" %>
         </form>
 
         <div id="thankyou-message">
