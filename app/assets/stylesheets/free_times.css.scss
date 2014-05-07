@@ -3,61 +3,63 @@ $cell-height: 13px;
 $select-color: #1abc9c;
 $deselect-color: #ccc;
 
-.day {
-  display: inline-block;
-  width: $cell-width+1;
-  height: $cell-height*2+3;
-}
+#time-table {
+    .day {
+        display: inline-block;
+        width: $cell-width+1;
+        height: $cell-height*2+3;
+    }
 
-.time-axis {
-  display: inline-block;
-  margin-top: $cell-height*2+3;
-  height: $cell-height*24+13;
-}
+    .time-axis {
+        display: inline-block;
+        margin-top: $cell-height*2+3;
+        height: $cell-height*24+13;
+    }
 
-.time-label {
-  height: $cell-height*4+2;
-  text-align: right;
-  font-size: 18px;
-}
+    .time-label {
+        height: $cell-height*4+2;
+        text-align: right;
+        font-size: 18px;
+    }
 
-.week {
-  display: inline-block;
-  vertical-align: top;
-}
+    .week {
+        display: inline-block;
+        vertical-align: top;
+    }
 
-.time {
-  font-size: 0px;
-  .top {
-    border-top-width: 1px;
-    border-top-style: solid;
-  }
+    .time {
+        font-size: 0px;
+        .top {
+            border-top-width: 1px;
+            border-top-style: solid;
+        }
 
-  .bottom {
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-  }
+        .bottom {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+        }
 
-  .right {
-    border-right-width: 1px;
-    border-right-style: solid;
-  }
+        .right {
+            border-right-width: 1px;
+            border-right-style: solid;
+        }
 
-  .dotted {
-    border-top-style: dotted;
-  }
+        .dotted {
+            border-top-style: dotted;
+        }
 
- .selected {
-    background: $select-color;
-  }
-}
+        .selected {
+            background: $select-color;
+        }
+    }
 
-.slot {
-  width: $cell-width;
-  height: $cell-height;
-  background: $deselect-color;
-  display: inline-block;
-  vertical-align: top;
-  border-left-width: 1px;
-  border-left-style: solid;
+    .slot {
+        width: $cell-width;
+        height: $cell-height;
+        background: $deselect-color;
+        display: inline-block;
+        vertical-align: top;
+        border-left-width: 1px;
+        border-left-style: solid;
+    }
 }

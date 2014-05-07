@@ -57,6 +57,8 @@ $(document).ready(function() {
 	    }
 	});
     });
+
+    $("#leaving-date").datepicker()
 });
 
 $.fn.serializeObject = function() {

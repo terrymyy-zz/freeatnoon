@@ -50,7 +50,8 @@
           </div>
             <h2> When do you leave campus? </h2>
           <div id="time-info-form-answers-bottom">
-            <input type="date" id="leaving-date" value="2014=05-18"> <br />
+            <input type="text" id="leaving-date" data-date-format="yyyy-mm-dd"
+                   value="<%=Time.now.strftime('%Y-%m-%d')%>"> <br />
           </div>
 	  <%= link_to "That's it!", "#", id: "submit-button", class: "btn" %>
         </form>

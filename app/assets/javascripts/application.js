@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require underscore
 //= require jquery.maskedinput
+//= require bootstrap-datepicker.js
 //= require_tree .
