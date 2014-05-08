@@ -60,6 +60,9 @@ $(document).ready(function() {
     });
 
     $("#leaving-date").datepicker()
+    $('#leaving-date').on('changeDate', function(ev){
+        $(this).datepicker('hide');
+    });
 });
 
 $.fn.serializeObject = function() {
