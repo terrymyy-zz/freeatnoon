@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :free_times
-  has_many :bad_dates
+  has_many :free_times, dependent: :destroy
+  has_many :bad_dates, dependent: :destroy
   has_many :sent_messages, class_name: "Sms", foreign_key: "from_user_id"
   has_many :received_messages, class_name: "Sms", foreign_key: "to_user_id"
 

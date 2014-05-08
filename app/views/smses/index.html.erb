@@ -5,6 +5,7 @@
       <table class="table table-striped">
 	<thead>
           <tr>
+            <th>At</th>
             <th>From</th>
             <th>To</th>
             <th>Body</th>
@@ -13,8 +14,9 @@
 	<tbody>
           <% @smses.each do |sms| %>
           <tr>
-            <td><%= sms.from_user_id ? sms.from_user.full_name : sms.from %></td>
-            <td><%= sms.to_user_id ? sms.to_user.full_name : sms.to %></td>
+            <td class="ftime"><%= sms.created_at.strftime("%b %d %I:%M%p") %></td>
+            <td><%= sms.from_user ? sms.from_user.full_name : sms.from %></td>
+            <td><%= sms.to_user ? sms.to_user.full_name : sms.to %></td>
             <td><%= sms.body %></td>
 	    </td>
           </tr>
