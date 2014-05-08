@@ -18,7 +18,6 @@ gem 'underscore-rails'
 gem 'rails_12factor', group: :production
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'twilio-ruby', '~> 3.11'
-gem 'whenever'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
