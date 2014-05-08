@@ -8,15 +8,15 @@
             <th>Joined</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Phone Number</th>
-            <th>Leaving Date</th>
-            <th>T</th>
-            <th>F</th>
-            <th>S</th>
-            <th>S</th>
-            <th>M</th>
-            <th>T</th>
-            <th>W</th>
+            <th>Phone #</th>
+            <th>Leaving</th>
+            <th class="bad-day-cell">T</th>
+            <th class="bad-day-cell">F</th>
+            <th class="bad-day-cell">S</th>
+            <th class="bad-day-cell">S</th>
+            <th class="bad-day-cell">M</th>
+            <th class="bad-day-cell">T</th>
+            <th class="bad-day-cell">W</th>
             <th>Actions</th>
           </tr>
 	</thead>
@@ -29,7 +29,9 @@
             <td><%= user.phone_number %></td>
             <td><%= user.leaving_date.strftime("%b %d") if user.leaving_date %></td>
             <% (8..14).each do |day| %>
-              <td><%= user.bad_dates_set.include?("#{day}/05/2014".to_date) ? "T" : "F" %></td>
+              <td class="bad-day-cell">
+                <%= user.bad_dates_set.include?("#{day}/05/2014".to_date) ? "T" : "F" %>
+              </td>
             <% end %>
             <td><%= link_to 'Destroy', user_path(user),
                     data: {confirm: "Are you sure you want to delete #{user.full_name}'s account?"},
