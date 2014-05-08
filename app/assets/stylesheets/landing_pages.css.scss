@@ -41,6 +41,7 @@ body {
 	margin: auto auto auto auto;
 	text-align: center;
 	margin-top: 20px;
+	display: none;
 }
 
 
@@ -211,7 +212,6 @@ input[type="submit"]:active{
 }
 
 #thankyou-message {
-		display: none;
 
 	h2 {
 		text-align: center;
