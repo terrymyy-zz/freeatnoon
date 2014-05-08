@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get "landing_pages/home"
   get "bye" => "landing_pages#bye"
-  post "twiml" => "smses#twiml"
   get "twiml" => "smses#twiml"
 
   post "welcome" => "smses#send_welcome_message"
@@ -15,7 +14,7 @@ Rails.application.routes.draw do
     get "sign_out", to: "devise/sessions#destroy"
   end
 
-  resources :users, only: :index
+  resources :users, only: [:index, :destroy]
   resources :free_times
   resources :bad_dates
   resources :smses

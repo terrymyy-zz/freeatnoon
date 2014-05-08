@@ -10,24 +10,30 @@
             <th>Email</th>
             <th>Phone Number</th>
             <th>Leaving Date</th>
-            <th>SMS Message</th>
+            <th>T</th>
+            <th>F</th>
+            <th>S</th>
+            <th>S</th>
+            <th>M</th>
+            <th>T</th>
+            <th>W</th>
+            <th>Actions</th>
           </tr>
 	</thead>
 	<tbody>
           <% @users.each do |user| %>
           <tr>
-            <td><%= user.created_at %></td>
-            <td><%= user.first_name %></td>
+            <td><%= user.created_at.strftime("%b %d") %></td>
+            <td><%= user.full_name %></td>
             <td><%= user.email %></td>
             <td><%= user.phone_number %></td>
-            <td><%= user.leaving_date %></td>
-	    <td>
-	      <%= form_for :sms, url: smses_path do |f| %>
-	        <%= f.hidden_field :to, value: user.phone_number %>
-	        <%= f.text_field :body %>
-		<%= f.submit "Send" %>
-	      <% end %>
-	    </td>
+            <td><%= user.leaving_date.strftime("%b %d") if user.leaving_date %></td>
+            <% (8..14).each do |day| %>
+              <td><%= user.bad_dates_set.include?("#{day}/05/2014".to_date) ? "T" : "F" %></td>
+            <% end %>
+            <td><%= link_to 'Destroy', user_path(user),
+                    data: {confirm: "Are you sure you want to delete #{user.full_name}'s account?"},
+                    method: :delete %></td>
           </tr>
           <% end %>
 	</tbody>
