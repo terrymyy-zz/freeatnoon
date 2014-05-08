@@ -36,7 +36,32 @@ Stoked to have you as part of the Free at Noon group. See ya soon!"
 
     # response logic
     if sms[:body].downcase.include?("yes")
-      twilio.send_sms(sms[:from], "Okay, we will get back to you if someone else is also down to meet!")
+      @randNumber = rand(7);
+      @stringToSend = "";
+      @promoString = "Btw, if you know anyone else who’d dig Free At Noon, get them in the group so we can make more matches!";
+      case @randNumber
+      when 0
+        @stringToSend = "Hell yea! We’ll follow up before noon if someone else is up to grab lunch.";
+      when 1
+        @stringToSend = "Okay, we’ll get back to you if someone else is also down to meet!";
+      when 2
+        @stringToSend = "Yes? Yes! Woohoo! We’ll let you know if someone else is also free at noon.";
+      when 3
+        @stringToSend = "We were hoping you’d say yes! We’ll follow up if there’s a match with someone else who’s free at noon.";
+      when 4
+        @stringToSend = "Booyah! We’ll follow up if there’s a match with someone else who’s free at noon.";
+      when 5
+        @stringToSend = "Wahoo!! We’ll follow up if there’s a match with someone else who’s free at noon.";
+      when 6
+        @stringToSend = "YAYYYYY. Great news. We’ll follow up if there’s a match with someone else who’s free at noon.";
+      when 7
+        @stringToSend = "Fantastic! We’ll follow up if there’s a match with someone else who’s free at noon.";
+      else
+        @stringToSend = "Great, thanks! We’ll follow up if there’s a match with someone else who’s free at noon."
+      end
+      @stringToSend << @promoString; 
+      twilio.send_sms(sms[:from], @stringToSend)
+
       if from_user
         from_user.response = true
         from_user.save
