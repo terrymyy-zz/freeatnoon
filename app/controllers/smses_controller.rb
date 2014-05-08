@@ -15,10 +15,10 @@ Stoked to have you as part of the Free at Noon group. See ya soon!"
   end
 
   def twiml
-    response = Twilio::TwiML::Response.new do |r|
-      r.Message "Hey!!"
-    end
-    render xml: response.text
+    Sms.create({from: params[:From].sub("+1",""),
+                 to: params[:To].sub("+1",""),
+                 body: params[:body]})
+    render xml: Twilio::TwiML::Response.new.text
   end
 
   def send_sms(to, body)
