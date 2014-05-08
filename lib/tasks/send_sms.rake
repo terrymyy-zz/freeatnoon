@@ -24,3 +24,9 @@ task :ask_noon => :environment do
     end
   end
 end
+
+task :msg_hong => :environment do
+  TwilioClient.new.send_sms("+12155880230","A TALE OF TWO CITIES")
+  puts "message sent to hong"
+end
+

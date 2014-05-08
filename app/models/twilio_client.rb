@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 class TwilioClient
   def initialize
-    puts ENV["TWILIO_SID"]
     @client ||= Twilio::REST::Client.new ENV["TWILIO_SID"], ENV["TWILIO_TOKEN"]
   end
 
