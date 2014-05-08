@@ -50,6 +50,7 @@ $(document).ready(function() {
                 console.log("Response: " + JSON.stringify(data));
                 $("#time-info-form").hide();
                 $("#thankyou-message").show();
+                $.ajax({type: "POST", url: "/welcome"});
             },
 	    error: function (data) {
                 console.log("Failed: " + data);

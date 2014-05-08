@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post "twiml" => "smses#twiml"
   get "twiml" => "smses#twiml"
 
+  post "welcome" => "smses#send_welcome_message"
+
   devise_for :users, :controllers => { :registrations => "registrations" }
 
   devise_scope :user do
