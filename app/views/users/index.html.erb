@@ -7,6 +7,7 @@
           <tr>
             <th>Email</th>
             <th>Phone Number</th>
+            <th>Leaving Date</th>
             <th>SMS Message</th>
           </tr>
 	</thead>
@@ -15,7 +16,7 @@
           <tr>
             <td><%= user.email %></td>
             <td><%= user.phone_number %></td>
-            <td><%= user.leavig_date %></td>
+            <td><%= user.leaving_date %></td>
 	    <td>
 	      <%= form_for :sms, url: smses_path do |f| %>
 	        <%= f.hidden_field :to, value: user.phone_number %>
