@@ -35,10 +35,6 @@ $(document).ready(function() {
 	    _.map(slots, function(arr) {arr.sort(function(a,b) { return a-b; })});
 	}
 
-	$("#leaving-date").blur(function() {
-  $( "#leaving-date" ).datepicker("hide");
-	});
-
 	var data = []
 	for (var i=0; i<slots.length; i++) {
 	    if (!slots[i]) continue;
