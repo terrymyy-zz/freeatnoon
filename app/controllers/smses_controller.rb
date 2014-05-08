@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 class SmsesController < ApplicationController
   def index
-    @smses = Sms.all
+    if is_admin?
+      @smses = Sms.all
+    end
   end
 
   def create
@@ -19,14 +21,14 @@ Stoked to have you as part of the Free at Noon group. See ya soon!"
   end
 
   def twiml
-    Sms.create({from: params[:From].sub("+1",""),
-                 to: params[:To].sub("+1",""),
-                 body: params[:body]})
+    Sms.create({from: params[:From],
+                 to: params[:To],
+                 body: params[:Body]})
     render xml: Twilio::TwiML::Response.new.text
   end
 
   def send_sms(to, body)
-    sms = { from: "+12679152717", to: "+1#{to.tr('() -','')}", body: body }
+    sms = { from: "+12679152717", to: to, body: body }
     twilio_client.account.messages.create(sms)
     sms
   end

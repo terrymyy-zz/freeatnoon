@@ -4,6 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     params[:user][:password_confirmation] = params[:user][:password]
+    params[:user][:phone_number] = "+1"+params[:user][:phone_number].tr('() -','')
     super
   end
 

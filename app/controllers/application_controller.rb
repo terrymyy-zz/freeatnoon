@@ -13,4 +13,12 @@ class ApplicationController < ActionController::Base
   def discard_flash_if_xhr
     flash.discard if request.xhr?
   end
+
+  def is_admin?
+    if current_user.try(:admin?)
+      true
+    else
+      return render "users/access_denied"
+    end
+  end
 end

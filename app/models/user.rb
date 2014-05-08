@@ -14,4 +14,9 @@ class User < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def format_phone_number
+    self.phone_number = "+1"+self.phone_number.sub("+1","").tr('() -','')
+    save
+  end
 end
