@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get "landing_pages/home"
   get "bye" => "landing_pages#bye"
+  post "twiml" => "smses#twiml"
+  get "twiml" => "smses#twiml"
 
   devise_for :users, :controllers => { :registrations => "registrations" }
 
