@@ -7,4 +7,11 @@ class SmsesController < ApplicationController
     Sms.create(sms)
     redirect_to users_path
   end
+
+  def twiml
+    response = Twilio::TwiML::Response.new do |r|
+      r.Message "Hey!!"
+    end
+    render xml: response.text
+  end
 end
