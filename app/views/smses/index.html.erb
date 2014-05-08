@@ -13,8 +13,8 @@
 	<tbody>
           <% @smses.each do |sms| %>
           <tr>
-            <td><%= sms.from %></td>
-            <td><%= sms.to %></td>
+            <td><%= sms.from_user_id ? sms.from_user.full_name : sms.from %></td>
+            <td><%= sms.to_user_id ? sms.to_user.full_name : sms.to %></td>
             <td><%= sms.body %></td>
 	    </td>
           </tr>

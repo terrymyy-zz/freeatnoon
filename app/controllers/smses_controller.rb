@@ -20,6 +20,7 @@ Stoked to have you as part of the Free at Noon group. See ya soon!"
     render json: { result: "success" }
   end
 
+  # triggered when our twilio number receives a message
   def twiml
     sms = { from: params[:From],
             to: params[:To],
@@ -30,7 +31,17 @@ Stoked to have you as part of the Free at Noon group. See ya soon!"
     to_user = User.find_by_phone_number(params[:To])
     sms[:to_user_id] = to_user.id if to_user
 
+    # save the message into the DB
     Sms.create(sms)
+
+    # response logic
+    if sms[:body].downcase.include?("yes")
+      send_sms(sms[:to], "Okay, we will get back to you if someone else is also down to meet!")
+    elsif sms[:body].downcase.include?("no")
+      send_sms(sms[:to], "Got it. Won't bother you today.")
+    end
+
+    # Empty response to Twilio (Do nothing more)
     render xml: Twilio::TwiML::Response.new.text
   end
 
