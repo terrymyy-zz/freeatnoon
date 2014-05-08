@@ -21,15 +21,24 @@ Stoked to have you as part of the Free at Noon group. See ya soon!"
   end
 
   def twiml
-    Sms.create({from: params[:From],
-                 to: params[:To],
-                 body: params[:Body]})
+    sms = { from: params[:From],
+            to: params[:To],
+            body: params[:Body] }
+
+    from_user = User.find_by_phone_number(params[:From])
+    sms[:from_user_id] = from_user.id if from_user
+    to_user = User.find_by_phone_number(params[:To])
+    sms[:to_user_id] = to_user.id if to_user
+
+    Sms.create(sms)
     render xml: Twilio::TwiML::Response.new.text
   end
 
   def send_sms(to, body)
     sms = { from: "+12679152717", to: to, body: body }
     twilio_client.account.messages.create(sms)
+    to_user = User.find_by_phone_number(to)
+    sms[:to_user_id] = to_user.id if to_user
     sms
   end
 

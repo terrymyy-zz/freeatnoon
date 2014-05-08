@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :free_times
   has_many :bad_dates
+  has_many :sent_messages, class_name: "Sms", foreign_key: "from_user_id"
+  has_many :received_messages, class_name: "Sms", foreign_key: "to_user_id"
 
   def bad_dates_set
     @dates ||= bad_dates.map{|bd| bd.date}
