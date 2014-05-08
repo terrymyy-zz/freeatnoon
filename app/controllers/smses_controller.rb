@@ -36,13 +36,13 @@ Stoked to have you as part of the Free at Noon group. See ya soon!"
 
     # response logic
     if sms[:body].downcase.include?("yes")
-      send_sms(sms[:to], "Okay, we will get back to you if someone else is also down to meet!")
+      send_sms(sms[:from], "Okay, we will get back to you if someone else is also down to meet!")
       if from_user
         from_user.response = true
         from_user.save
       end
     elsif sms[:body].downcase.include?("no")
-      send_sms(sms[:to], "Got it. Won't bother you today.")
+      send_sms(sms[:from], "Got it. Won't bother you today.")
       if from_user
         from_user.response = false
         from_user.save
