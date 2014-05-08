@@ -67,7 +67,7 @@ Stoked to have you as part of the Free at Noon group. See ya soon!"
         from_user.response = true
         from_user.save
       elsif sms[:body].downcase.include?("no")
-        twilio.send_sms(sms[:from], "Got it. Won't bother you today.")
+        twilio.send_sms(sms[:from], "Got it. Have a great day!")
         from_user.response = false
         from_user.save
       end
