@@ -24,7 +24,7 @@
 	<tbody>
           <% @users.each do |user| %>
           <tr>
-            <td><%= user.created_at.strftime("%b %d") %></td>
+            <td><%= user.created_at.strftime("%b %d %I:%M%p") %></td>
             <td><%= user.full_name %></td>
             <td><%= user.email %></td>
             <td><%= user.phone_number %></td>

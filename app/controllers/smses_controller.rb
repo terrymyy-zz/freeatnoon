@@ -35,15 +35,13 @@ Stoked to have you as part of the Free at Noon group. See ya soon!"
     from_user = @sms.from_user
 
     # response logic
-    if sms[:body].downcase.include?("yes")
-      twilio.send_sms(sms[:from], "Okay, we will get back to you if someone else is also down to meet!")
-      if from_user
+    if from_user
+      if sms[:body].downcase.include?("yes")
+        twilio.send_sms(sms[:from], "Okay, we will get back to you if someone else is also down to meet!")
         from_user.response = true
         from_user.save
-      end
-    elsif sms[:body].downcase.include?("no")
-      twilio.send_sms(sms[:from], "Got it. Won't bother you today.")
-      if from_user
+      elsif sms[:body].downcase.include?("no")
+        twilio.send_sms(sms[:from], "Got it. Won't bother you today.")
         from_user.response = false
         from_user.save
       end
