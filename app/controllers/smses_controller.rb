@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 class SmsesController < ApplicationController
+  def index
+    @smses = Sms.all
+  end
+
   def create
     sms = send_sms(params[:sms][:to], params[:sms][:body])
     Sms.create(sms)
