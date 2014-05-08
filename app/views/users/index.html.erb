@@ -5,6 +5,8 @@
       <table class="table table-striped">
 	<thead>
           <tr>
+            <th>Joined</th>
+            <th>Name</th>
             <th>Email</th>
             <th>Phone Number</th>
             <th>Leaving Date</th>
@@ -14,6 +16,8 @@
 	<tbody>
           <% @users.each do |user| %>
           <tr>
+            <td><%= user.created_at %></td>
+            <td><%= user.first_name %></td>
             <td><%= user.email %></td>
             <td><%= user.phone_number %></td>
             <td><%= user.leaving_date %></td>
