@@ -38,6 +38,11 @@
         </div>
 
         <form id="time-info-form">
+          <h2> When do you leave campus? </h2>
+          <div id="time-info-form-answers-bottom">
+            <input type="text" id="leaving-date" data-date-format="yyyy-mm-dd"
+                   value="<%=Time.now.strftime('%Y-%m-%d')%>"> <br />
+          </div>
           <h2> When are you <span style="color:#000">not</span> available? </h2>
           <div id="time-info-form-answers-top">
             <input type="checkbox" value="2014-05-07"> Thursday (5/7) <br />
@@ -47,11 +52,6 @@
             <input type="checkbox" value="2014-05-11"> Monday (5/11) <br />
             <input type="checkbox" value="2014-05-12"> Tuesday (5/12) <br />
             <input type="checkbox" value="2014-05-13"> Wednesday (5/13) <br />
-          </div>
-            <h2> When do you leave campus? </h2>
-          <div id="time-info-form-answers-bottom">
-            <input type="text" id="leaving-date" data-date-format="yyyy-mm-dd"
-                   value="<%=Time.now.strftime('%Y-%m-%d')%>"> <br />
           </div>
 	  <%= link_to "That's it!", "#", id: "submit-button", class: "btn" %>
         </form>
