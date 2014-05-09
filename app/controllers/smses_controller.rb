@@ -2,7 +2,7 @@
 class SmsesController < ApplicationController
   def index
     if is_admin?
-      @smses = Sms.all
+      @smses = Sms.order(:created_at)
     end
   end
 
