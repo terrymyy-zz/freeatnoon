@@ -36,7 +36,7 @@ class TwilioClient
   end
 
   def send_noon_sms(user)
-    msg = "Hey there #{user.first_name}! We haven’t heard back about lunch today. Please let us know in the next 30 minutes. (Please respond “yes” or “no”.)"
+    msg = "Hey there #{user.first_name}! We haven’t heard back about lunch today. Please let us know in the next 30 minutes! (Please respond “yes” or “no”.)"
     send_sms(user.phone_number,msg)
   end
 

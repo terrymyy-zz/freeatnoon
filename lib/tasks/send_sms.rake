@@ -5,8 +5,12 @@ task :ask_morning => :environment do
 
   users.each do |u|
     unless u.bad_dates_set.include?(Time.now.to_date)
-      twilio.send_morning_sms(u)
-      puts "msg sent to: " + u.full_name
+      begin
+        twilio.send_morning_sms(u)
+        puts "msg sent to: " + u.full_name
+      rescue
+        puts "FAILED sending to: " + u.full_name
+      end
     end
   end
 end
@@ -17,8 +21,12 @@ task :ask_noon => :environment do
 
   users.each do |u|
     unless u.bad_dates_set.include?(Time.now.to_date)
-      twilio.send_noon_sms(u)
-      puts "msg sent to: " + u.full_name
+      begin
+        twilio.send_noon_sms(u)
+        puts "msg sent to: " + u.full_name
+      rescue
+        puts "FAILED sending to: " + u.full_name
+      end
     end
   end
 end
