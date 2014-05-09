@@ -11,13 +11,13 @@
             <th>Phone #</th>
             <th>Leaving</th>
             <th>Reply</th>
-            <th class="bad-day-cell">T</th>
             <th class="bad-day-cell">F</th>
             <th class="bad-day-cell">S</th>
             <th class="bad-day-cell">S</th>
             <th class="bad-day-cell">M</th>
             <th class="bad-day-cell">T</th>
             <th class="bad-day-cell">W</th>
+            <th class="bad-day-cell">T</th>
             <th>Actions</th>
           </tr>
 	</thead>
@@ -36,7 +36,7 @@
                     else
                       "NO"
                     end %></td>
-            <% (8..14).each do |day| %>
+            <% (Time.now.day..6.days.from_now.day).each do |day| %>
               <td class="bad-day-cell">
                 <%= user.bad_dates_set.include?("#{day}/05/2014".to_date) ? "U" : "A" %>
               </td>
