@@ -4,7 +4,7 @@ task :ask_morning => :environment do
   twilio = TwilioClient.new
 
   users.each do |u|
-    unless u.bad_dates_set.include?(Time.now.to_date)
+    unless u.bad_dates_set.include?(Time.now.to_date) || u.mute
       begin
         twilio.send_morning_sms(u)
         puts "msg sent to: " + u.full_name
@@ -20,7 +20,7 @@ task :ask_noon => :environment do
   twilio = TwilioClient.new
 
   users.each do |u|
-    unless u.bad_dates_set.include?(Time.now.to_date)
+    unless u.bad_dates_set.include?(Time.now.to_date) || u.mute
       begin
         twilio.send_noon_sms(u)
         puts "msg sent to: " + u.full_name

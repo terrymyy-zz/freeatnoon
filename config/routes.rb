@@ -14,7 +14,11 @@ Rails.application.routes.draw do
     get "sign_out", to: "devise/sessions#destroy"
   end
 
-  resources :users, only: [:index, :destroy]
+  resources :users, only: [:index, :destroy] do
+    member do
+      post "toggle_mute"
+    end
+  end
   resources :free_times
   resources :bad_dates
   resources :smses

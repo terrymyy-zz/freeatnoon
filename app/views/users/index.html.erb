@@ -24,7 +24,7 @@
 	<tbody>
           <% @users.each do |user| %>
           <tr>
-            <td><%= user.created_at.strftime("%b %d %I:%M%p") %></td>
+            <td class="ftime"><%= user.created_at.strftime("%b %d %I:%M%p") %></td>
             <td><%= user.full_name %></td>
             <td><%= user.email %></td>
             <td><%= user.phone_number %></td>
@@ -44,6 +44,11 @@
             <td><%= link_to 'Destroy', user_path(user),
                     data: {confirm: "Are you sure you want to delete #{user.full_name}'s account?"},
                     method: :delete %></td>
+            <% if user.mute  %>
+              <td><%= link_to 'Unmute', toggle_mute_user_path(user), method: :post %></td>
+            <% else %>
+              <td><%= link_to 'Mute', toggle_mute_user_path(user), method: :post %></td>
+            <% end %>
           </tr>
           <% end %>
 	</tbody>
