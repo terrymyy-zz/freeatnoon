@@ -15,7 +15,8 @@ class TwilioClient
   end
 
   def respond_to_yes(to)
-    promo_str = "Btw, if you know anyone else who’d dig Free At Noon, get them in the group so we can make more matches!"
+    # promo_str = "Btw, if you know anyone else who’d dig Free At Noon, get them in the group so we can make more matches!"
+    promo_str = ""
     potential_msgs =
       ["Hell yea! We’ll follow up before noon if someone else is up to grab lunch.",
        "Okay, we’ll get back to you if someone else is also down to meet!",
@@ -31,7 +32,7 @@ class TwilioClient
   end
 
   def send_morning_sms(user)
-    msg = "Good morning #{user.first_name}! Up for having lunch with someone today? (Please respond “yes” or “no”.)"
+    msg = "Woohoo it's a Sunday! Up for having lunch with someone today? (Pls respond “yes” or “no”.)"
     send_sms(user.phone_number,msg)
   end
 
