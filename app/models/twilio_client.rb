@@ -32,8 +32,8 @@ class TwilioClient
   end
 
   def send_morning_sms(user)
-    msg = "Woohoo it's a Sunday! Up for having lunch with someone today? (Pls respond “yes” or “no”.)"
-    send_sms(user.phone_number,msg)
+    # msg = "Woohoo it's a Sunday! Up for having lunch with someone today? (Pls respond “yes” or “no”.)"
+    # send_sms(user.phone_number,msg)
   end
 
   def send_noon_sms(user)
@@ -41,4 +41,8 @@ class TwilioClient
     send_sms(user.phone_number,msg)
   end
 
+  def send_correction(user)
+    msg = "Haha jk. We all know it's Monday :P"
+    send_sms(user.phone_number,msg)
+  end
 end
