@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     $("#join-group-button").click(function(e) {
 	e.preventDefault();
-        $("#user-info-form").show();
+        $("#summer-message").show();
         $("#signup-button").hide();
         $("#welcome-message").hide();
     });
