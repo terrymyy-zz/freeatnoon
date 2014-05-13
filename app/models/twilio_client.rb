@@ -32,7 +32,7 @@ class TwilioClient
   end
 
   def send_morning_sms(user)
-    msg = "Hi there and good evening! Are you free at noon to get together with another member tomorrow? We're trying something new and asking you tonight instead of tomorrow morning. (Pls respond “yes” or “no”.)"
+    msg = "Hi there and good evening! Are you free at noon tomorrow to grab lunch/coffee with another member? We're trying something new and asking you tonight instead of tomorrow morning. (Pls respond “yes” or “no”.)"
     send_sms(user.phone_number,msg)
   end
 
