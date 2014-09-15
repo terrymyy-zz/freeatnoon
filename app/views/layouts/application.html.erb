@@ -36,7 +36,7 @@
       }
       #time-info-form-answers-bottom > input > #leaving-date{
         width: 140px;
-      } 
+      }
       #welcome-message > .btn {
         width: 200px;
         padding-left: 5px;
@@ -96,6 +96,19 @@
     <% if current_user %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     <% end %>
-    <%= yield %>
+    <div id="home_img">
+      <div class="container">
+        <div class="row">
+          <div id="bigBox" class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+            <div id="bigBoxContent">
+              <%= yield %>
+            </div>
+            <div class="row">
+              <footer>Made by Penn students.</footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,60 +1,46 @@
-<div id="home_img">
-  <div class="container">
-    <div class="row">
-    <div id="bigBox" class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-      <div id="bigBoxContent">
+<div id="welcome-message">
+  <h3>Welcome To</h3>
+  <h1>Free at Noon</h1>
+  <p>We’re a small group of people at Penn who want to take advantage of our random windows of free time — to meet new people and to keep up with friends.</p>
+  <p>It’s a pain to schedule that stuff though. This tool takes the hassle out of seeing if anyone is free when you are. Join us!</p>
+  <%= link_to "Join the Group", "#", id: "join-group-button", class: "btn" %>
+  <%= link_to "Or Sign in", new_user_session_path, id: "sign-in-button", class: "btn" %>
+</div>
 
-        <div id="welcome-message">
-      	  <h3>Welcome To</h3>
-      	  <h1>Free at Noon</h1>
-      	  <p>We’re a small group of people at Penn who want to take advantage of our random windows of free time — to meet new people and to keep up with friends.</p>
-      	  <p>It’s a pain to schedule that stuff though. This tool takes the hassle out of seeing if anyone is free when you are. Join us!</p>
-      	  <%= link_to "Join the Group", "#", id: "join-group-button", class: "btn" %>
-      	  <%= link_to "Or Sign in", new_user_session_path, id: "sign-in-button", class: "btn" %>
-        </div>
+<div id="user-info-form">
+  <h2>Woohoo! Welcome.</h2>
 
-        <div id="user-info-form">
-          <h2>Woohoo! Welcome.</h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
 
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
+  <div><%= f.label :first_name, id: "user-info-form-label" %><br />
+    <%= f.text_field :first_name, autofocus: true, type: "text", placeholder: "Jon" %></div>
 
-          <div><%= f.label :first_name, id: "user-info-form-label" %><br />
-            <%= f.text_field :first_name, autofocus: true, type: "text", placeholder: "Jon" %></div>
+  <div><%= f.label :last_name, id: "user-info-form-label" %><br />
+    <%= f.text_field :last_name, type: "text", placeholder: "Huntsman" %></div>
 
-          <div><%= f.label :last_name, id: "user-info-form-label" %><br />
-            <%= f.text_field :last_name, type: "text", placeholder: "Huntsman" %></div>
+  <div><%= f.label :phone_number, id: "user-info-form-label" %><br />
+    <%= f.text_field :phone_number, type: "tel", placeholder: "650-291-3866" %></div>
 
-          <div><%= f.label :phone_number, id: "user-info-form-label" %><br />
-            <%= f.text_field :phone_number, type: "tel", placeholder: "650-291-3866" %></div>
+  <div><%= f.label :email, id: "user-info-form-label" %><br />
+    <%= f.email_field :email, type: "email", placeholder: "jon.huntsman97@aol.net" %></div>
 
-          <div><%= f.label :email, id: "user-info-form-label" %><br />
-            <%= f.email_field :email, type: "email", placeholder: "jon.huntsman97@aol.net" %></div>
+  <div><%= f.label :password, id: "user-info-form-label" %><br />
+    <%= f.password_field :password, type: "password", autocomplete: "off", placeholder: "*********" %></div>
 
-          <div><%= f.label :password, id: "user-info-form-label" %><br />
-            <%= f.password_field :password, type: "password", autocomplete: "off", placeholder: "*********" %></div>
+  <div><%= f.submit "Continue", id: "continue-button" %></div>
+<% end %>
+</div>
 
-          <div><%= f.submit "Continue", id: "continue-button" %></div>
-        <% end %>
-        </div>
+<form id="free-time-info-form">
+  <%= render "free_times/form" %>
+</form>
 
-        <form id="free-time-info-form">
-          <%= render "free_times/form" %>
-        </form>
-
-        <div id="thankyou-message">
-          <h2>You're a champion!</h2>
-          <p>You did it! Welcome to the gang. So what happens next you ask?</p>
-          <p>It's simple. On days that you're not-not free you'll get a text at 8:00AM (so you can respond when you wake up) asking if you are up for lunch with another member. If you say yes and the system sees a match, it'll put you in a groupme with your lunchmate and you two can decide on the place. That's it!</p>
-          <p>Feel free to hit us up (650-291-3866 / freeatnoon@gmail.com) if you wanna chat about something, wanna set up a private Free at Noon circle for a club, or have any other thoughts. Looking forward to seeing you for lunch!</p>
-          <p>Oh, and make sure to check out <a href="http://www.youtube.com/watch?v=dQw4w9WgXcQ">these etiquette guidelines</a> before your first meeting.</p>
-        </br>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="row">
-        <footer>Made by Penn students.</footer>
-    </div>
-  </div>
+<div id="thankyou-message">
+  <h2>You're a champion!</h2>
+  <p>You did it! Welcome to the gang. So what happens next you ask?</p>
+  <p>It's simple. On days that you're not-not free you'll get a text at 8:00AM (so you can respond when you wake up) asking if you are up for lunch with another member. If you say yes and the system sees a match, it'll put you in a groupme with your lunchmate and you two can decide on the place. That's it!</p>
+  <p>Feel free to hit us up (650-291-3866 / freeatnoon@gmail.com) if you wanna chat about something, wanna set up a private Free at Noon circle for a club, or have any other thoughts. Looking forward to seeing you for lunch!</p>
+  <p>Oh, and make sure to check out <a href="http://www.youtube.com/watch?v=dQw4w9WgXcQ">these etiquette guidelines</a> before your first meeting.</p>
+</br>
 </div>
