@@ -45,24 +45,6 @@ body {
 	margin-top: 20px;
 }
 
-#summer-message {
-	display: none;
-	margin: auto auto auto auto;
-	text-align: center;
-	margin-top: 20px;
-}
-
-#summer-message > p {
-	text-align: left;
-	margin-left: 6%;
-	margin-right: 6%;
- font-family: "Roboto";
-	font-weight: 100;
-	font-size: 13pt;
-	line-height: 16pt;
-	padding-bottom: 3%;
-}
-
 #welcome-message > h1 {
 	font-family: "Journal";
 	font-size: 64pt;
@@ -165,68 +147,6 @@ input[type="submit"]:hover{
 
 input[type="submit"]:active{
 	background-color: #2DB28E !important;
-}
-
-
-#time-info-form {
- color: #fff;
- margin-left: auto;
- margin-right: auto;
- width: 335px;
- text-align: center;
- display: none;
-
-
- h2 {
- 	font-size: 18pt;
- }
-
- input[type="date"]{
- 	padding-left: 10px;
- }
-
- #time-info-form-answers-top{
- 	width: 150px;
- 	text-align: left;
- 	margin-left: auto;
- 	margin-right: auto;
- 	font-size: 12pt;
- 	font-family: "Roboto";
-		font-weight: 100;
-		line-height: 18pt;
- }
-
-  #time-info-form-answers-bottom{
- 	width: 180px;
- 	text-align: left;
- 	margin-left: auto;
- 	margin-right: auto;
- 	font-size: 12pt;
- 	font-family: "Roboto";
-		font-weight: 100;
- }
-
-
-
-	.btn {
-		margin-top: 15px;
-		margin-bottom: 25px;
-		font-family: "Roboto";
-		font-weight: 100;
-		font-size: 20pt;
-		padding-left: 70px;
-		padding-right: 70px;
-		background-color: #36CBA2;
-		color: #fff;
-	}
-	.btn:hover {
-		background-color: #43DBB1;
-	}
-	.btn:active {
-		background-color: #2DB28E;
-	}
-
-
 }
 
 #free-time-info-form {

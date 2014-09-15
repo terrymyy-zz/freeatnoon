@@ -33,36 +33,6 @@ $(document).ready(function() {
             dataType: "json"
         });
     });
-
-    $("#submit-button").click(function(e) {
-	e.preventDefault();
-        var badDates = $("input[type='checkbox']")
-                        .filter(function(idx) { return this.checked })
-                        .map(function() { return {date: $(this).val()} }).get();
-	$.ajax({
-	    type: "POST",
-	    url: "/bad_dates/",
-	    data: JSON.stringify({bad_dates: badDates,
-                                  leaving_date: $("#leaving-date").val()}),
-	    dataType: "json",
-	    contentType: "application/json",
-            success: function(data){
-                console.log("Response: " + JSON.stringify(data));
-                $("#time-info-form").hide();
-                $("#thankyou-message").show();
-                $.ajax({type: "POST", url: "/welcome"});
-            },
-	    error: function (data) {
-                console.log("Failed: " + data);
-		alert("Failed creating user bad dates.");
-	    }
-	});
-    });
-
-    $("#leaving-date").datepicker()
-    $('#leaving-date').on('changeDate', function(ev){
-        $(this).datepicker('hide');
-    });
 });
 
 $.fn.serializeObject = function() {
