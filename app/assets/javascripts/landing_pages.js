@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     $("#join-group-button").click(function(e) {
 	e.preventDefault();
-        $("#summer-message").show();
+        $("#user-info-form").show();
         $("#signup-button").hide();
         $("#welcome-message").hide();
     });
@@ -19,7 +19,7 @@ $(document).ready(function() {
             success: function(data){
                 console.log("Response: " + JSON.stringify(data));
                 $("#user-info-form").hide();
-                $("#time-info-form").show();
+                $("#free-time-info-form").show();
             },
 	    error: function (data) {
                 var errors = $.parseJSON(data["responseText"])["errors"];

@@ -4,7 +4,7 @@ class FreeTimesController < ApplicationController
 
   def create
     current_user.free_times.create(free_times_params)
-    render js: "window.location = '/bye'"
+    render json: { result: "success" }
   end
 
   private

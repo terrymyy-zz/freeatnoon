@@ -4,10 +4,14 @@ $select-color: #1abc9c;
 $deselect-color: #ccc;
 
 #time-table {
+    margin-left: auto;
+    margin-right: auto;
+
     .day {
         display: inline-block;
-        width: $cell-width+1;
+        width: $cell-width - 4;
         height: $cell-height*2+3;
+        font-size: 18px;
     }
 
     .time-axis {

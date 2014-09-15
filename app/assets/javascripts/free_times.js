@@ -57,9 +57,15 @@ $(document).ready(function() {
 	    type: "POST",
 	    url: "/free_times/",
 	    data: JSON.stringify({free_times: data}),
-	    dataType: "script",
+	    dataType: "json",
 	    contentType: "application/json",
+            success: function(data) {
+                console.log("Response: " + JSON.stringify(data));
+                $("#free-time-info-form").hide();
+                $("#thankyou-message").show();
+            },
 	    error: function (data) {
+                console.log("Failed: " + data);
 		alert("Failed creating user free times.");
 	    }
 	});
