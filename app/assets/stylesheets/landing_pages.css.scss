@@ -149,10 +149,7 @@ input[type="submit"]:active{
 	background-color: #2DB28E !important;
 }
 
-#free-time-info-form {
-    display: none;
-    text-align: center;
-
+@mixin stylish-buttons {
     .btn {
 	margin-top: 15px;
 	margin-bottom: 25px;
@@ -170,6 +167,17 @@ input[type="submit"]:active{
     .btn:active {
 	background-color: #2DB28E;
     }
+}
+
+#free-time-info-form {
+    display: none;
+    text-align: center;
+    @include stylish-buttons;
+}
+
+#edit-free-time-info-form {
+    text-align: center;
+    @include stylish-buttons;
 }
 
 #sign-in-form {

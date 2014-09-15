@@ -32,6 +32,16 @@
 	<% klass += " top" if i % 4 == 0 %>
 	<% klass += " top dotted" if i % 4 == 2 %>
 	<% klass += " bottom" if i == 23 %>
+
+        <% if current_user %>
+          <% current_user.free_times.where(day: j).each do |ft| %>
+            <% time = 10+i/4.0 %>
+            <% if time >= ft.time && time < ft.time + ft.duration %>
+              <% klass += " selected" %>
+            <% end %>
+          <% end %>
+        <% end %>
+
 	<div id="<%=days[j]%>-<%=(10+0.25*i)%>" class="<%=klass%>"></div>
       <% end %>
     </div>

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   after_filter :discard_flash_if_xhr
 
   def after_sign_in_path_for(resource)
-    bye_path
+    edit_free_time_path(resource)
   end
 
   protected

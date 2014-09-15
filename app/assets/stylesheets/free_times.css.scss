@@ -21,7 +21,7 @@ $deselect-color: #ccc;
     }
 
     .time-label {
-        height: $cell-height*4+2;
+        height: $cell-height*4;
         text-align: right;
         font-size: 18px;
     }
@@ -66,4 +66,8 @@ $deselect-color: #ccc;
         border-left-width: 1px;
         border-left-style: solid;
     }
+}
+
+#edit-successful-message {
+    display: none;
 }
