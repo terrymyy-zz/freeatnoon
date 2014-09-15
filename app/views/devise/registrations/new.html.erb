@@ -28,7 +28,7 @@
   <div><%= f.label :password, id: "user-info-form-label" %><br />
     <%= f.password_field :password, type: "password", autocomplete: "off", placeholder: "*********" %></div>
 
-  <div><%= f.submit "Continue", id: "continue-button" %></div>
+  <div><%= link_to "Continue", "#", id: "continue-button", class: "btn" %></div>
 <% end %>
 </div>
 

@@ -7,13 +7,24 @@
  src: asset-url("journal.ttf", font) format("truetype");
 }
 
-
-h3 {
-	font-family: "Helvetica", "Verdana", sans-serif;
-}
-
-h2 {
-	font-family: "Helvetica", "Verdana", sans-serif;
+@mixin stylish-buttons($margin-top: 15px, $margin-bottom: 25px) {
+    .btn {
+	margin-top: $margin-top;
+	margin-bottom: $margin-bottom;
+	font-family: "Roboto";
+	font-weight: 100;
+	font-size: 20pt;
+	padding-left: 70px;
+	padding-right: 70px;
+	background-color: #36CBA2;
+	color: #fff;
+    }
+    .btn:hover {
+	background-color: #43DBB1;
+    }
+    .btn:active {
+	background-color: #2DB28E;
+    }
 }
 
 body {
@@ -43,21 +54,19 @@ body {
 	margin: auto auto auto auto;
 	text-align: center;
 	margin-top: 20px;
-}
-
-#welcome-message > h1 {
+    h1 {
 	font-family: "Journal";
 	font-size: 64pt;
 	line-height: 15pt;
 	padding-bottom: 30px;
-}
+    }
 
-#welcome-message > h3 {
+    h3 {
 	font-size: 14pt;
 	font-weight: 800;
-}
+    }
 
-#welcome-message > p {
+    p {
 	text-align: left;
 	margin-left: 6%;
 	margin-right: 6%;
@@ -65,34 +74,17 @@ body {
 	font-weight: 100;
 	font-size: 13pt;
 	line-height: 16pt;
-	}
+    }
 
-#welcome-message > .btn {
-	margin-top: 15px;
-	margin-bottom: 25px;
-	font-family: "Roboto";
-	font-weight: 100;
-	font-size: 20pt;
-	padding-left: 70px;
-	padding-right: 70px;
-	background-color: #36CBA2;
-	color: #fff;
-}
-
-#welcome-message > .btn:hover {
-	background-color: #43DBB1;
-}
-
-#welcome-message > .btn:active {
-	background-color: #2DB28E;
-}
-
-#user-info-form > h2 {
-	text-align: center;
+    @include stylish-buttons;
 }
 
 #user-info-form {
  display: none;
+
+ h2 {
+     text-align: center;
+ }
 
  #new_user {
  	margin-left: auto;
@@ -108,8 +100,8 @@ body {
 			margin-left: 25px !important;
 		}
  }
+ @include stylish-buttons(20px, 20px);
 }
-
 
 label {
 	font-family: "Roboto" !important;
@@ -124,49 +116,6 @@ input {
 	border: 1px inset rgba(0, 0, 0, 0.35);
 	color: #36CBA2 !important;
 
-}
-input[type="submit"]{
-		margin-top: 20px;
-		margin-bottom: 20px;
-		font-family: "Roboto";
-		font-weight: 100;
-		font-size: 20pt;
-		padding-left: 70px !important;
-		padding-right: 70px;
-		background-color: #36CBA2 !important;
-		color: #fff !important;
-		border: 0px;
-		margin-left: 0 !important;
-		height: 43px !important;
-		width: 250px !important;
-	}
-
-input[type="submit"]:hover{
-	background-color: #43DBB1 !important;
-}
-
-input[type="submit"]:active{
-	background-color: #2DB28E !important;
-}
-
-@mixin stylish-buttons {
-    .btn {
-	margin-top: 15px;
-	margin-bottom: 25px;
-	font-family: "Roboto";
-	font-weight: 100;
-	font-size: 20pt;
-	padding-left: 70px;
-	padding-right: 70px;
-	background-color: #36CBA2;
-	color: #fff;
-    }
-    .btn:hover {
-	background-color: #43DBB1;
-    }
-    .btn:active {
-	background-color: #2DB28E;
-    }
 }
 
 #free-time-info-form {
