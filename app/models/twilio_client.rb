@@ -18,15 +18,15 @@ class TwilioClient
     # promo_str = "Btw, if you know anyone else who’d dig Free At Noon, get them in the group so we can make more matches!"
     promo_str = ""
     potential_msgs =
-      ["Hell yea! We’ll follow up before noon if someone else is up to grab lunch.",
-       "Okay, we’ll get back to you if someone else is also down to meet!",
-       "Yes? Yes! Woohoo! We’ll let you know if someone else is also free at noon.",
-       "We were hoping you’d say yes! We’ll follow up if there’s a match with someone else who’s free at noon.",
-       "Booyah! We’ll follow up if there’s a match with someone else who’s free at noon.",
-       "Wahoo!! We’ll follow up if there’s a match with someone else who’s free at noon.",
-       "YAYYYYY. Great news. We’ll follow up if there’s a match with someone else who’s free at noon.",
-       "Fantastic! We’ll follow up if there’s a match with someone else who’s free at noon.",
-       "Great, thanks! We’ll follow up if there’s a match with someone else who’s free at noon."]
+      ["Hell yea! As soon as we know if someone else is free at the same time, we'll put you in a groupme. Love, The FreeAtNoon Bot.",
+       "ERMAHGERD YESSSS! As soon as we know if someone else is free at the same time, we'll put you in a groupme. Love, The FreeAtNoon Bot.",
+       "Yes? Yes! Woohoo! As soon as we know if someone else is free at the same time, we'll put you in a groupme. Love, The FreeAtNoon Bot.",
+       "We were hoping you’d say yes! As soon as we know if someone else is free at the same time, we'll put you in a groupme. Love, The FreeAtNoon Bot.",
+       "Booyah! As soon as we know if someone else is free at the same time, we'll put you in a groupme. Love, The FreeAtNoon Bot.",
+       "Wahoo!! As soon as we know if someone else is free at the same time, we'll put you in a groupme. Love, The FreeAtNoon Bot.",
+       "YAYYYYY. Great news. As soon as we know if someone else is free at the same time, we'll put you in a groupme. Love, The FreeAtNoon Bot.",
+       "Fantastic! As soon as we know if someone else is free at the same time, we'll put you in a groupme. Love, The FreeAtNoon Bot.",
+       "Great, thanks! As soon as we know if someone else is free at the same time, we'll put you in a groupme. Love, The FreeAtNoon Bot."]
     msg = "%s %s" % [potential_msgs[rand(8)], promo_str]
     send_sms(to, msg)
   end
@@ -47,9 +47,7 @@ class TwilioClient
   end
 
   def send_welcome_sms(user)
-    msg = "Hey #{user.first_name}! On the morning of the day you stated as available, the system will shoot you a text asking if you’re free to grab lunch with a member of the group. You simply respond “yes” or “no”. If yes, and we see a match, we’ll pair you up in a Groupme so you two can pick the place. That’s it!
-
-Stoked to have you as part of the Free at Noon group. See ya soon!"
+    msg = "Hey #{user.first_name}! This is the FreeAtNoon bot; you can just call me FAN. Here’s what’s next: on the days you said you’re free, you’ll get a text from me in the morning. It will ask you if you’re still free for that day. You simply text back a “yes” or a “no.” If you send a “yes” and someone else is free at the same time, you’ll be put into a groupme with them. Then all you have to do is pick the place to meet. That’s it! Glad to have you as part of the FreeAtNoon group! Last thing, here’s a fun meme: http://bit.ly/SeriousImage. You earned it."
     send_sms(user.phone_number, msg, false)
   end
 end
