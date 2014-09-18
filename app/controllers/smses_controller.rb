@@ -12,10 +12,7 @@ class SmsesController < ApplicationController
   end
 
   def send_welcome_message
-    msg = "Hey #{current_user.first_name}! Each morning, on days you’re not unavailable, the system will shoot you a text asking if you’re free to grab lunch with a member of the group. You simply respond “yes” or “no”. If yes, and we see a match, we’ll pair you up in a Groupme so you two can pick the place. That’s it!
-
-Stoked to have you as part of the Free at Noon group. See ya soon!"
-    twilio.send_sms(current_user.phone_number, msg, false)
+    twilio.send_welcome_sms(current_user)
     render json: { result: "success" }
   end
 

@@ -45,4 +45,11 @@ class TwilioClient
     msg = "Haha jk. We all know it's Monday :P"
     send_sms(user.phone_number,msg)
   end
+
+  def send_welcome_sms(user)
+    msg = "Hey #{user.first_name}! On the morning of the day you stated as available, the system will shoot you a text asking if you’re free to grab lunch with a member of the group. You simply respond “yes” or “no”. If yes, and we see a match, we’ll pair you up in a Groupme so you two can pick the place. That’s it!
+
+Stoked to have you as part of the Free at Noon group. See ya soon!"
+    send_sms(user.phone_number, msg, false)
+  end
 end
