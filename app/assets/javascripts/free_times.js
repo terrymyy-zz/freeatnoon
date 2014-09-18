@@ -61,12 +61,16 @@ $(document).ready(function() {
 	    contentType: "application/json",
             success: function(data) {
                 console.log("Response: " + JSON.stringify(data));
-                // In case of sign up
-                $("#free-time-info-form").hide();
-                $("#thankyou-message").show();
-                // In case of free time edit
-                $("#edit-free-time-info-form").hide();
-                $("#edit-successful-message").show();
+                if ($("#free-time-info-form").length == 1) {
+                  // In case of sign up
+                  $("#free-time-info-form").hide();
+                  $("#thankyou-message").show();
+                  $.ajax({type: "POST", url: "/welcome"});
+                } else {
+                  // In case of free time edit
+                  $("#edit-free-time-info-form").hide();
+                  $("#edit-successful-message").show();
+                }
             },
 	    error: function (data) {
                 console.log("Failed: " + data);
