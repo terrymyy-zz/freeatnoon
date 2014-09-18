@@ -2,15 +2,15 @@
   <h2>Sign in</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %>
-    <%= f.email_field :email, autofocus: true %></div></br>
+  <div><%= f.label :email, id: "user-info-form-label" %></br>
+    <%= f.email_field :email, autofocus: true, placeholder: "jon.huntsman97@aol.net" %></div>
 
-  <div><%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "off" %></div>
+  <div><%= f.label :password, id: "user-info-form-label" %></br>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "*********"  %></div>
 
-  <div><%= f.submit "Sign in" %></div>
+  <div><%= f.submit "Sign in", class: "btn" %></div>
   <% end %>
 
   <%= link_to "Forgot your password?", new_password_path(resource_name),
-      id: "forgot-password-button", class: "btn" %>
+      id: "forgot-password-button" %>
 </div>
