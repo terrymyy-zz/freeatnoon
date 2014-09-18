@@ -135,39 +135,42 @@ input {
 }
 
 #sign-in-form {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
- 			width: 250px;
- 			h2 {
-     text-align: center;
- 			}
- 			input {
-	 		height: 30px;
-	 		width: 200px;
-				margin-left: 25px;
-				padding-left: 10px;
-				}
-				label {
-					margin-left: 25px !important;
-				}		
-				@include stylish-buttons(20px, 10px);
-				.btn {
-				height: 50px !important;
-				}
-				#forgot-password-button {
-				margin-left: 50px;
-				color: #E0E0E0;
-				}
-				#forgot-password-button:hover {
-				text-decoration: none;
-				};
+ margin-left: auto;
+ margin-right: auto;
+ text-align: left;
+	width: 250px;
+	h2 {
+  text-align: center;
+	}
+	input {
+	height: 30px;
+	width: 200px;
+	margin-left: 25px;
+	padding-left: 10px;
+	}
+	label {
+		margin-left: 25px !important;
+	}		
+	@include stylish-buttons(20px, 10px);
+	.btn {
+	height: 50px !important;
+	}
+	#forgot-password-button {
+	margin-left: 50px;
+	color: #E0E0E0;
+	}
+	#forgot-password-button:hover {
+	text-decoration: none;
+	};
 }
 
 #forgot-password-form {
 	@extend #sign-in-form;
 }
 
+#continue-button {
+	margin-left: 23px;
+}
 
 #thankyou-message {
 	display: none;
