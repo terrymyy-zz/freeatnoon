@@ -21,4 +21,12 @@ class User < ActiveRecord::Base
     self.phone_number = "+1"+self.phone_number.sub("+1","").tr('() -','')
     save
   end
+
+  def available_day?(day)
+    available = false
+    free_times.each do |ft|
+      available ||= day == ft.day
+    end
+    available
+  end
 end

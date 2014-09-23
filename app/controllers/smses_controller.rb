@@ -32,7 +32,7 @@ class SmsesController < ApplicationController
     from_user = @sms.from_user
 
     # response logic
-    if from_user
+    if from_user && from_user.response.nil?
       if sms[:body].downcase.include?("yes")
         twilio.respond_to_yes(sms[:from])
         from_user.response = true

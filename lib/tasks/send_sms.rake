@@ -3,42 +3,11 @@ task :ask_morning => :environment do
   users = User.all
   twilio = TwilioClient.new
 
+  day_today = Time.now.wday
   users.each do |u|
-    unless u.bad_dates_set.include?(Time.now.to_date) || u.mute
+    if u.available_day?(day_today) && !u.mute
       begin
         twilio.send_morning_sms(u)
-        puts "msg sent to: " + u.full_name
-      rescue
-        puts "FAILED sending to: " + u.full_name
-      end
-    end
-  end
-end
-
-task :ask_noon => :environment do
-  users = User.where(response: nil)
-  twilio = TwilioClient.new
-
-  users.each do |u|
-    unless u.bad_dates_set.include?(Time.now.to_date) || u.mute
-      begin
-        twilio.send_noon_sms(u)
-        puts "msg sent to: " + u.full_name
-      rescue
-        puts "FAILED sending to: " + u.full_name
-      end
-    end
-  end
-end
-
-task :send_correction => :environment do
-  users = User.where(response: nil)
-  twilio = TwilioClient.new
-
-  users.each do |u|
-    unless u.bad_dates_set.include?(Time.now.to_date) || u.mute
-      begin
-        twilio.send_correction(u)
         puts "msg sent to: " + u.full_name
       rescue
         puts "FAILED sending to: " + u.full_name
