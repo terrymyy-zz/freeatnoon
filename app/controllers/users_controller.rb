@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :is_admin?
+  before_filter :is_admin?, except: [:send_reminder]
 
   def index
     @users = User.all.order("created_at DESC")
@@ -16,5 +16,10 @@ class UsersController < ApplicationController
     user.mute = !user.mute
     user.save
     redirect_to users_path
+  end
+
+  def send_reminder
+    UserMailer.send_time_input_reminder(current_user)
+    render json: { result: "success" }
   end
 end

@@ -150,7 +150,7 @@ input {
 	}
 	label {
 		margin-left: 25px !important;
-	}		
+	}
 	@include stylish-buttons(20px, 10px);
 	.btn {
 	height: 50px !important;
@@ -170,6 +170,10 @@ input {
 
 #continue-button {
 	margin-left: 23px;
+}
+
+#mobile-message {
+    display: none;
 }
 
 #thankyou-message {
