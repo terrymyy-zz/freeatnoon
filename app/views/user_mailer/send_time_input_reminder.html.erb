@@ -4,7 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Thanks for signing up, <%= @user.full_name %>!</h1>
-    <p>Please visit freeatnoon.com, log in with your credentials, and input your time availability.</p>
+    <h1>Glad you signed up <%= @user.first_name %>!</h1>
+    <p>It looks like you signed up earlier today on your phone. The last thing we need is to know when you’re free.</p>
+    <p>Go to <a href=http://www.freeatnoon.com/users/sign_in>freeatnoon.com</a> (on a computer, not your phone). Sign in and input your rough availability. After that you'll be all set. Excited to have you in the group.</p>
+    <p><a href=http://www.freeatnoon.com/users/sign_in>Finish setup now!</a></p>
+    <p>Love,</br>The FreeAtNoon Bot</p>
   </body>
 </html>
