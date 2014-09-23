@@ -3,7 +3,7 @@ task :ask_morning => :environment do
   users = User.all
   twilio = TwilioClient.new
 
-  day_today = Time.now.wday
+  day_today = Time.now.in_time_zone.wday
   users.each do |u|
     if u.available_day?(day_today) && !u.mute
       begin

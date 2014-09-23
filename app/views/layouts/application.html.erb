@@ -102,7 +102,7 @@
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     <% end %>
 
-    <% if params[:controller] != "users" %>
+    <% unless ["users", "smses"].include? params[:controller] %>
       <div id="home_img">
         <div class="container">
           <div class="row">
