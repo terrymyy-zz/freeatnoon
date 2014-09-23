@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def send_reminder
-    UserMailer.send_time_input_reminder(current_user)
+    UserMailer.send_time_input_reminder(current_user).deliver
     render json: { result: "success" }
   end
 end
