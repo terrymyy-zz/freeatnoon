@@ -10,6 +10,6 @@ class FreeTime < ActiveRecord::Base
   end
 
   def format_time(t)
-    "%d:%d" % [t.to_i, (60*(t % 1)).round]
+    "%02d:%02d" % [t.to_i, (60*(t % 1)).round]
   end
 end

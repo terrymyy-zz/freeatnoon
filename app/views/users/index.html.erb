@@ -10,7 +10,7 @@
             <th>Email</th>
             <th>Phone #</th>
             <th>Reply</th>
-            <th>Today</th>
+            <th class="time-cell">Today</th>
             <th class="bad-day-cell">S</th>
             <th class="bad-day-cell">M</th>
             <th class="bad-day-cell">T</th>
@@ -35,7 +35,7 @@
                     else
                       "NO"
                     end %></td>
-            <td><%= user.free_times_today_formatted %></td>
+            <td class="time-cell"><%= user.free_times_today_formatted %></td>
             <% (0..6).each do |day| %>
               <td class="bad-day-cell">
                 <%= user.available_day?(day) ? "A" : "U" %>
