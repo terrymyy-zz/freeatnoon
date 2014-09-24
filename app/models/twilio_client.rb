@@ -35,6 +35,7 @@ class TwilioClient
     msg = "Hey #{user.first_name}! Are you free today to grab coffee/lunch with another member at the time you put down for today? Love, The FreeAtNoon Bot. 
 
     (Pls text back “yes” or “no”.)"
+    send_sms(user.phone_number,msg)
     user.response = nil
     user.save
   end
