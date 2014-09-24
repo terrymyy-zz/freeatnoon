@@ -9,6 +9,7 @@ class TwilioClient
     @client.account.messages.create(sms)
     to_user = User.find_by_phone_number(to)
     sms[:to_user_id] = to_user.id if to_user
+    sms[:body] = "F@N bot message." if body.length > 400
     if save
       Sms.create(sms)
     end
