@@ -49,6 +49,9 @@
             <% else %>
               <td><%= link_to 'Mute', toggle_mute_user_path(user), method: :post %></td>
             <% end %>
+            <% unless user.explained  %>
+              <td><%= link_to 'Explain', "send_policy/#{user.id}" %></td>
+            <% end %>
           </tr>
           <% end %>
 	</tbody>

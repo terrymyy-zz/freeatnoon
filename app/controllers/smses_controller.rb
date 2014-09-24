@@ -17,6 +17,14 @@ class SmsesController < ApplicationController
     render json: { result: "success" }
   end
 
+  def send_policy
+    user = User.find(params[:id])
+    twilio.send_policy(user)
+    user.explained = true
+    user.save
+    redirect_to users_path
+  end
+
   # triggered when our twilio number receives a message
   def twiml
     sms = { from: params[:From],
