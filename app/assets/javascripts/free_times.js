@@ -65,11 +65,13 @@ $(document).ready(function() {
                   // In case of sign up
                   $("#free-time-info-form").hide();
                   $("#thankyou-message").show();
-                  $.ajax({type: "POST", url: "/welcome"});
                 } else {
                   // In case of free time edit
                   $("#edit-free-time-info-form").hide();
                   $("#edit-successful-message").show();
+                }
+                if (data["new_user"]) {
+                  $.ajax({type: "POST", url: "/welcome"});
                 }
             },
 	    error: function (data) {

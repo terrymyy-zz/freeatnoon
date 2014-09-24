@@ -6,9 +6,15 @@ class FreeTimesController < ApplicationController
   end
 
   def create
-    current_user.free_times.delete_all
+    new_user = false
+    if current_user.free_times.present?
+      current_user.free_times.delete_all
+    else
+      new_user = true
+    end
+
     current_user.free_times.create(free_times_params)
-    render json: { result: "success" }
+    render json: { result: "success", new_user: new_user }
   end
 
   private
