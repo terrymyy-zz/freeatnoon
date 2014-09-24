@@ -71,3 +71,17 @@ $deselect-color: #ccc;
 #edit-successful-message {
     display: none;
 }
+
+#edit-mobile-message {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #edit-mobile-message {
+        display: block;
+    }
+
+    #edit-free-time-info-form {
+        display: none;
+    }
+}
