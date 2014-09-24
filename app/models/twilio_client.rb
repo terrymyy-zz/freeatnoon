@@ -32,7 +32,7 @@ class TwilioClient
   end
 
   def send_morning_sms(user)
-    msg = "Hey #{user.first_name}! Are you free today to grab coffee/lunch with another member at the time you put down for today? Love, The FreeAtNoon Bot.
+    msg = "Hey #{user.first_name}! Are you free today to grab coffee/lunch with another member at the time you put down? Love, The FreeAtNoon Bot.
 
     (Pls text back “yes” or “no”.)"
     send_sms(user.phone_number,msg)
@@ -46,7 +46,7 @@ class TwilioClient
   end
 
   def send_policy(user)
-    msg = "[Our matching policy here]"
+    msg = "Hi #{user.first_name}, me again. Today you said you were free. We weren't able to match you though. Just wanted to explain how matching works -- so you know what to expect in the future. At 10AM, noon, and 2PM a script runs to see if 2 or more people both responded "yes" and have windows that overlap. If there is a match, the two people are put in a groupme. If not, we won't message you (to minimize spam). That's how it works! The more people using F@N, the more often there should be matches -- feel free to invite any friends you'd like to have in the group. Hope we can match you next time! Love, The FreeAtNoon Bot."
     send_sms(user.phone_number,msg)
   end
 end
