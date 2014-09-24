@@ -2,7 +2,8 @@
 class SmsesController < ApplicationController
   def index
     if is_admin?
-      @smses = Sms.order(:created_at)
+      display_from = DateTime.new 2014, 9, 24
+      @smses = Sms.where("created_at > ?", display_from).order(:created_at)
     end
   end
 
