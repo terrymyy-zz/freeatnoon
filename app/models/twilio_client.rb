@@ -40,7 +40,7 @@ class TwilioClient
   end
 
   def send_welcome_sms(user)
-    msg = "Hey #{user.first_name}! This is the FreeAtNoon bot; you can just call me FAN. Here’s what’s next: on the days you said you’re free, you’ll get a text from me in the morning. It will ask you if you’re still free for that day. You simply text back a “yes” or a “no.” If you send a “yes” and someone else is free at the same time, you’ll be put into a groupme with them. Then all you have to do is pick the place to meet. That’s it! Glad to have you as part of the FreeAtNoon group! Last thing, here’s a fun meme: http://bit.ly/SeriousImage. You earned it."
+    msg = "Hey #{user.first_name}! I'm the FreeAtNoon bot; you can just call me F@N. Here’s what’s next: on the days you said you’re free, you’ll get a text from me in the morning. It will ask you if you’re still free for that day. You simply text back a “yes” or a “no.” If you send a “yes” and someone else is free at the same time, you’ll be put into a groupme with them. Then all you have to do is pick the place to meet. That’s it! Glad to have you as part of the FreeAtNoon group! Last thing, it's important you see this: http://bit.ly/SeriousImage."
     send_sms(user.phone_number, msg, false)
   end
 end
