@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
   after_filter :discard_flash_if_xhr
 
   def after_sign_in_path_for(resource)
-    edit_free_time_path(resource)
+    if current_user.try(:admin?)
+      users_path
+    else
+      edit_free_time_path(resource)
+    end
   end
 
   protected

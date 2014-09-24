@@ -1,5 +1,10 @@
+<h2>Name: <%= @user.full_name %></h2>
+
 <%= render "free_times/form", user: @user %>
 
+<br/>
+<br/>
+Send SMS: <br/>
 <%= form_for :sms, url: smses_path do |f| %>
   <%= f.hidden_field :to, value: @user.phone_number %>
   <%= f.text_field :body, id: "sms-body" %>
