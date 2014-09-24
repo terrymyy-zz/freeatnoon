@@ -29,4 +29,12 @@ class User < ActiveRecord::Base
     end
     available
   end
+
+  def free_times_today
+    free_times.where(day: Time.now.in_time_zone.wday)
+  end
+
+  def free_times_today_formatted
+    free_times_today.map { |ft| ft.format }.join(", ")
+  end
 end
